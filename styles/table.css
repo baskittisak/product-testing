@@ -1,0 +1,77 @@
+.table-container {
+    border-top: 1px solid var(--secondary);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th {
+    text-align: left;
+    padding: 1rem;
+    background-color: var(--bg-color);
+    color: var(--text-primary-color);
+    border-bottom: 1px solid var(--secondary);
+}
+
+td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--secondary);
+}
+
+.action-button {
+    display: flex;
+    gap: 8px;
+}
+
+.status-available {
+    background-color: rgba(47, 135, 51, 0.15);
+    color: #2f8733;
+    padding: 5px 10px;
+    border-radius: var(--border-radius);
+}
+
+.status-not-available {
+    background-color: rgba(226, 36, 84, 0.15);
+    color: #e22454;
+    padding: 5px 10px;
+    border-radius: var(--border-radius);
+}
+
+.table-pagination {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.table-pagination ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+}
+
+.table-pagination li {
+    margin: 0 6px;
+}
+
+.table-pagination p {
+    cursor: pointer;
+    padding: 8px 12px;
+    background-color: var(--white);
+    border: 1px solid var(--secondary);
+    border-radius: var(--border-radius);
+}
+
+.table-pagination p:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.table-pagination .active {
+    background-color: var(--primary-color);
+    color: var(--white);
+}

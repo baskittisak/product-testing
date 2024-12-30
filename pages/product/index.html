@@ -1,0 +1,188 @@
+<div class="box-container">
+    <div class="box-header">
+        <h4>ผลิตภัณฑ์ทั้งหมด</h4>
+        <button class="button primary-button" onclick="window.location.assign('/#product/#create')">
+          <i class='bx bx-plus-circle' ></i><span>สร้างผลิตภัณฑ์ใหม่</span>
+        </button>
+    </div>
+    <div class="search-container">
+        <div class="search-input">
+            <p>กลุ่มผลิตภัณฑ์</p>
+            <select>
+                <option value="" disabled selected>เลือกกลุ่มผลิตภัณฑ์</option>
+                <option value="scientific-instruments">กลุ่มผลิตภัณฑ์เครื่องมือวิทยาศาสตร์</option>
+                <option value="equipment-calibration">กลุ่มผลิตภัณฑ์การสอบเทียบอุปกรณ์</option>
+                <option value="material-testing">กลุ่มผลิตภัณฑ์การทดสอบวัสดุ</option>
+                <option value="instrument-calibration">กลุ่มผลิตภัณฑ์การสอบเทียบเครื่องมือ</option>
+                <option value="chemical-testing">กลุ่มผลิตภัณฑ์การทดสอบทางเคมี</option>
+                <option value="electrical-testing">กลุ่มผลิตภัณฑ์การทดสอบทางไฟฟ้า</option>
+                <option value="mechanical-testing">กลุ่มผลิตภัณฑ์การทดสอบทางกล</option>
+                <option value="pressure-calibration">กลุ่มผลิตภัณฑ์การสอบเทียบเครื่องวัดความดัน</option>
+                <option value="hardness-testing">กลุ่มผลิตภัณฑ์การทดสอบความแข็ง</option>
+            </select>
+        </div>
+        <div class="search-input">
+            <p>ชื่อผลิตภัณฑ์</p>
+            <input type="text" placeholder="ค้นหาชื่อผลิตภัณฑ์" />
+        </div>
+    </div>
+    <div class="search-button">
+        <button class="button secondary-button">ล้างข้อมูล</button>
+        <button class="button primary-button"><i class='bx bx-search'></i><span>ค้นหา</span></button>
+    </div>
+    <div class="table-container">
+        <table>
+            <thead>
+              <tr>
+                <th>กลุ่มผลิตภัณฑ์</th>
+                <th>รหัสผลิตภัณฑ์</th>
+                <th>ชื่อผลิตภัณฑ์</th>
+                <th>ชื่อผลิตภัณฑ์ (ภาษาอังกฤษ)</th>
+                <th>สถานะการให้บริการ</th>
+                <th>จัดการ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>กลุ่มผลิตภัณฑ์เครื่องมือวิทยาศาสตร์</td>
+                <td>SI001</td>
+                <td>เครื่องวัดอุณหภูมิ</td>
+                <td>Thermometer</td>
+                <td><span class="status-available">ให้บริการ</span></td>
+                <td>
+                  <div class="action-button">
+                    <button class="button primary-button"><i class='bx bx-edit'></i></button>
+                    <button class="button primary-button"><i class='bx bx-trash'></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>กลุ่มผลิตภัณฑ์การทดสอบวัสดุ</td>
+                <td>MT001</td>
+                <td>เครื่องทดสอบความแข็ง</td>
+                <td>Hardness Testing Machine</td>
+                <td><span class="status-not-available">งดให้บริการ</span></td>
+                <td>
+                  <div class="action-button">
+                    <button class="button primary-button"><i class='bx bx-edit'></i></button>
+                    <button class="button primary-button"><i class='bx bx-trash'></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>กลุ่มผลิตภัณฑ์การสอบเทียบอุปกรณ์</td>
+                <td>EC001</td>
+                <td>เครื่องสอบเทียบอุปกรณ์ไฟฟ้า</td>
+                <td>Electrical Calibration Equipment</td>
+                <td><span class="status-available">ให้บริการ</span></td>
+                <td>
+                  <div class="action-button">
+                    <button class="button primary-button"><i class='bx bx-edit'></i></button>
+                    <button class="button primary-button"><i class='bx bx-trash'></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>กลุ่มผลิตภัณฑ์การสอบเทียบเครื่องมือ</td>
+                <td>IC001</td>
+                <td>เครื่องสอบเทียบเครื่องมือวัด</td>
+                <td>Instrument Calibration Tool</td>
+                <td><span class="status-available">ให้บริการ</span></td>
+                <td>
+                  <div class="action-button">
+                    <button class="button primary-button"><i class='bx bx-edit'></i></button>
+                    <button class="button primary-button"><i class='bx bx-trash'></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>กลุ่มผลิตภัณฑ์การทดสอบทางเคมี</td>
+                <td>CT001</td>
+                <td>เครื่องทดสอบสารเคมี</td>
+                <td>Chemical Testing Device</td>
+                <td><span class="status-not-available">งดให้บริการ</span></td>
+                <td>
+                  <div class="action-button">
+                    <button class="button primary-button"><i class='bx bx-edit'></i></button>
+                    <button class="button primary-button"><i class='bx bx-trash'></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>กลุ่มผลิตภัณฑ์การทดสอบทางไฟฟ้า</td>
+                <td>ET001</td>
+                <td>เครื่องทดสอบความต้านทานไฟฟ้า</td>
+                <td>Electrical Resistance Tester</td>
+                <td><span class="status-available">ให้บริการ</span></td>
+                <td>
+                  <div class="action-button">
+                    <button class="button primary-button"><i class='bx bx-edit'></i></button>
+                    <button class="button primary-button"><i class='bx bx-trash'></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>กลุ่มผลิตภัณฑ์การทดสอบทางกล</td>
+                <td>MT002</td>
+                <td>เครื่องทดสอบแรงดึง</td>
+                <td>Tensile Testing Machine</td>
+                <td><span class="status-not-available">งดให้บริการ</span></td>
+                <td>
+                  <div class="action-button">
+                    <button class="button primary-button"><i class='bx bx-edit'></i></button>
+                    <button class="button primary-button"><i class='bx bx-trash'></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>กลุ่มผลิตภัณฑ์การสอบเทียบเครื่องวัดความดัน</td>
+                <td>PC001</td>
+                <td>เครื่องสอบเทียบเครื่องวัดความดัน</td>
+                <td>Pressure Calibration Equipment</td>
+                <td><span class="status-available">ให้บริการ</span></td>
+                <td>
+                  <div class="action-button">
+                    <button class="button primary-button"><i class='bx bx-edit'></i></button>
+                    <button class="button primary-button"><i class='bx bx-trash'></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>กลุ่มผลิตภัณฑ์การทดสอบความแข็ง</td>
+                <td>HT001</td>
+                <td>เครื่องทดสอบความแข็งวัสดุ</td>
+                <td>Material Hardness Tester</td>
+                <td><span class="status-not-available">งดให้บริการ</span></td>
+                <td>
+                  <div class="action-button">
+                    <button class="button primary-button"><i class='bx bx-edit'></i></button>
+                    <button class="button primary-button"><i class='bx bx-trash'></i></button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+        </table>
+        <div class="table-pagination">
+            <div>แสดงผลลัพธ์ 10 จาก 10 รายการ</div>
+            <ul>
+                <li>
+                    <p>
+                        <i class='bx bx-chevron-left' ></i>
+                        <span>ก่อนหน้า</span>
+                    </p>
+                </li>
+                <li><p class="active">1</p></li>
+                <li><p>2</p></li>
+                <li><p>3</p></li>
+                <li><p>4</p></li>
+                <li><p>5</p></li>
+                <li>
+                    <p>
+                        <span>ถัดไป</span>
+                        <i class='bx bx-chevron-right' ></i>
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

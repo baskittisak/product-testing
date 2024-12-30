@@ -1,0 +1,45 @@
+.form-header {
+    background-color: var(--bg-color);
+    padding: 1rem;
+    color: var(--text-primary-color);
+    border-bottom: 1px solid var(--secondary);
+}
+
+.form-container,
+.sub-form-container {
+    width: 100%;
+    padding: 1rem;
+}
+
+.form-container > div,
+.sub-form-container > div {
+    display: grid;
+}
+
+.sub-form-container {
+    border: 1px solid var(--secondary);
+    border-radius: var(--border-radius);
+    margin: 20px 0;
+    padding: 1.5rem;
+}
+
+.sub-form-title {
+    margin-bottom: 20px;
+}
+
+.form-column {
+    grid-template-columns: 10% 1fr 10% 1fr;
+    margin-bottom: 20px;
+    gap: 20px;
+
+    > p {
+        margin-right: 12px;
+    }
+}
+
+.form-button {
+    display: flex !important;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: 0 1rem 1rem;
+}

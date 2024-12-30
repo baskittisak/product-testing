@@ -1,0 +1,21 @@
+.header-container {
+    height: 80px;
+    position: fixed;
+    width: calc(100% - 280px);
+    right: 0;
+    padding: 1rem;
+    background-color: var(--white);
+}
+
+.header-profile {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 14px;
+
+    > i {
+        font-size: 46px;
+        margin-right: 8px;
+    }
+}

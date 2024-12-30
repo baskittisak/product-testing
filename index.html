@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/sidebar.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/content.css">
+    <link rel="stylesheet" href="styles/table.css">
+    <link rel="stylesheet" href="styles/form.css">
+    <title>ทดสอบผลิตภัณฑ์</title>
+</head>
+<body>
+    <aside class="sidebar-container">
+        <div class="sidebar">
+            <div class="logo">
+                <a href="#home">
+                    <i class='bx bx-exclude'></i>
+                    <span>Lorem</span>
+                </a>
+            </div>
+            <div class="menu-container">
+                <a href="#home">
+                    <i class='bx bxs-home'></i>
+                    <span>หน้าหลัก</span>
+                </a>
+
+                <a class="menu-collapse-container">
+                    <span>
+                        <i class='bx bxs-package'></i>
+                        <span>จัดการผลิตภัณฑ์</span>
+                    </span>
+                    <i class='bx bxs-chevron-right'></i>
+                </a>
+                <div class="menu-collapse-items">
+                    <a href="#product-group">
+                        <i class='bx bxs-grid-alt'></i>
+                        <span>กลุ่มผลิตภัณฑ์</span>
+                    </a>
+                    <a href="#product">
+                        <i class='bx bxs-box'></i>
+                        <span>ผลิตภัณฑ์</span>
+                    </a>
+                </div>
+
+                <a href="#fee-management">
+                    <i class='bx bxs-purchase-tag'></i>
+                    <span>บัญชีค่าธรรมเนียม</span>
+                </a>
+            </div>
+        </div>
+    </aside>
+    <header class="header-container">
+        <div class="header-profile">
+            <i class='bx bxs-user-circle'></i>
+            <div>
+                <p>แพรทริค ฟริงเลอร์</p>
+                <p>ผู้ดูแลระบบ</p>
+            </div>
+        </div>
+    </header>
+    <section class="content-container" id="content"></section>
+    <script src="scripts/script.js"></script>
+</body>
+</html>

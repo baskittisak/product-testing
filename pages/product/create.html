@@ -1,0 +1,75 @@
+<div class="box-container">
+    <div class="box-header">
+        <span>
+            <h4>สร้างผลิตภัณฑ์ใหม่</h4>
+            <p>กรุณาระบุข้อมูลด้านล่างให้ครบถ้วน</p>
+        </span>
+    </div>
+    <div class="form-header">
+        <h4>ข้อมูลผลิตภัณฑ์ใหม่</h4>
+    </div>
+    <div class="form-container">
+        <div class="form-column">
+            <p>กลุ่มผลิตภัณฑ์</p>
+            <div class="search-input">
+                <select>
+                    <option value="" disabled selected>เลือกกลุ่มผลิตภัณฑ์</option>
+                    <option value="scientific-instruments">กลุ่มผลิตภัณฑ์เครื่องมือวิทยาศาสตร์</option>
+                    <option value="equipment-calibration">กลุ่มผลิตภัณฑ์การสอบเทียบอุปกรณ์</option>
+                    <option value="material-testing">กลุ่มผลิตภัณฑ์การทดสอบวัสดุ</option>
+                    <option value="instrument-calibration">กลุ่มผลิตภัณฑ์การสอบเทียบเครื่องมือ</option>
+                    <option value="chemical-testing">กลุ่มผลิตภัณฑ์การทดสอบทางเคมี</option>
+                    <option value="electrical-testing">กลุ่มผลิตภัณฑ์การทดสอบทางไฟฟ้า</option>
+                    <option value="mechanical-testing">กลุ่มผลิตภัณฑ์การทดสอบทางกล</option>
+                    <option value="pressure-calibration">กลุ่มผลิตภัณฑ์การสอบเทียบเครื่องวัดความดัน</option>
+                    <option value="hardness-testing">กลุ่มผลิตภัณฑ์การทดสอบความแข็ง</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-column">
+            <p>รหัสผลิตภัณฑ์</p>
+            <div class="search-input">
+                <input type="text" placeholder="กรอกรหัสผลิตภัณฑ์" />
+            </div>
+        </div>
+        <div class="form-column">
+            <p>ชื่อผลิตภัณฑ์</p>
+            <div class="search-input">
+                <input type="text" placeholder="กรอกชื่อผลิตภัณฑ์" />
+            </div>
+            <p>ชื่อผลิตภัณฑ์ (ภาษาอังกฤษ)</p>
+            <div class="search-input">
+                <input type="text" placeholder="กรอกชื่อผลิตภัณฑ์ (ภาษาอังกฤษ)" />
+            </div>
+        </div>
+        <div class="form-column">
+            <p>สถานะการให้บริการ</p>
+            <div class="search-input">
+                <label class="radio">
+                    <input type="radio" name="status-product-group" value="available" />
+                    <span></span>
+                    ให้บริการ
+                </label>
+                <label class="radio">
+                    <input type="radio" name="status-product-group" value="not-available" />
+                    <span></span>
+                    งดให้บริการ
+                </label>
+            </div>
+        </div>
+        <div class="form-column">
+            <p>สาเหตุการงดให้บริการ</p>
+            <div class="search-input">
+                <textarea placeholder="กรอกสาเหตุการงดให้บริการ"></textarea>
+            </div>
+        </div>
+        <button class="button primary-button" onclick="addTestForm()">
+            <i class='bx bx-plus-circle' ></i><span>เพิ่มรายการทดสอบ</span>
+        </button>
+        <div id="testFormContainer"></div>
+        <div class="form-button">
+            <button class="button secondary-button">ล้างข้อมูล</button>
+            <button class="button primary-button"><i class='bx bxs-save' ></i><span>บันทึกข้อมูล</span></button>
+        </div>
+    </div>
+</div>
