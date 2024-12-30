@@ -1,5 +1,6 @@
 # Project Structure
 
+```
 product-testing/
 ├── pages/
 │   ├── home.html
@@ -26,3 +27,4 @@ product-testing/
 │   └── index.css
 ├── index.html
 └── favicon.ico
+```
