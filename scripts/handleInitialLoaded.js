@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (isHome) {
             page = `pages/${hash}.html`;
         } else if (isCreate) {
-            const section = hash.split('/')[0];
+            const section =  hash.split('/')[0];
             page = `pages/${section}/create.html`;
         } else {
             page = `pages/${hash}/index.html`;
@@ -48,10 +48,11 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(response => response.text())
             .then(data => {
                 content.innerHTML = data;
+                const section =  hash.split('/')[0];
                 if (!isHome && !isCreate) {
-                    mapProductGroupTable();
+                    selectedFunctionMapTable(section);
                 } else if (isCreate) {
-                    mapResponsibleAgencySelect();
+                    selectedFunctionMapForm(section);
                 }
                 updateActiveMenu(hash);
             })
@@ -82,3 +83,36 @@ document.addEventListener("DOMContentLoaded", () => {
         loadPage(currentHash);
     });
 });
+
+
+const selectedFunctionMapTable = (section) => {
+    switch (section) {
+        case "product":
+
+            break;
+        case "product-group":
+            mapProductGroupTable();
+            break;
+        case "fee-management":
+
+            break;
+        default:
+            break;
+    }
+}
+
+const selectedFunctionMapForm = (section) => {
+    switch (section) {
+        case "product":
+
+            break;
+        case "product-group":
+            mapResponsibleAgencySelect();
+            break;
+        case "fee-management":
+
+            break;
+        default:
+            break;
+    }
+}
