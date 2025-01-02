@@ -30,10 +30,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // Dynamic page loading based on hash
     const loadPage = (hash) => {
         let page = '';
+        const isHome = hash === 'home';
+        const isCreate = hash.includes('create');
 
-        if (hash === 'home') {
+        if (isHome) {
             page = `pages/${hash}.html`;
-        } else if (hash.includes('create')) {
+        } else if (isCreate) {
             const section = hash.split('/')[0];
             page = `pages/${section}/create.html`;
         } else {
@@ -46,7 +48,9 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(response => response.text())
             .then(data => {
                 content.innerHTML = data;
-                mapProductGroupTable();
+                if (!isHome && !isCreate) {
+                    mapProductGroupTable();
+                }
                 updateActiveMenu(hash);
             })
             .catch(error => {

@@ -2,7 +2,7 @@ import { PRODUCT_GROUPS } from "./data.js";
 
 export const mapProductGroupTable = () => {
     const productGroups = PRODUCT_GROUPS;
-    const tableBody = document.getElementById('productGroupTable');
+    const productGroupTable = document.getElementById('productGroupTable');
 
     productGroups.forEach(group => {
       const row = document.createElement('tr');
@@ -21,6 +21,6 @@ export const mapProductGroupTable = () => {
         </td>
       `;
 
-      tableBody.appendChild(row);
+      productGroupTable.appendChild(row);
     });
 }
