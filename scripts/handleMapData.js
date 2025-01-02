@@ -1,4 +1,4 @@
-import { PRODUCT_GROUPS, RESPONSIBLE_AGENCY } from "./data.js";
+import { PRODUCT_GROUPS, RESPONSIBLE_AGENCY, PRODUCTS } from "./data.js";
 
 export const mapProductGroupTable = () => {
     const productGroups = PRODUCT_GROUPS;
@@ -6,13 +6,15 @@ export const mapProductGroupTable = () => {
 
     productGroups.forEach(group => {
       const row = document.createElement('tr');
+      const statusClass =
+        group.serviceStatus === "ให้บริการ" ? "status-available" : "status-not-available";
 
       row.innerHTML = `
         <td>${group.productGroupId}</td>
         <td>${group.productGroupName}</td>
         <td>${group.productGroupNameEn}</td>
         <td>${group.productType}</td>
-        <td><span class="status-${group.serviceStatus === 'ให้บริการ' ? 'available' : 'not-available'}">${group.serviceStatus}</span></td>
+        <td><span class="${statusClass}">${group.serviceStatus}</span></td>
         <td>
           <div class="action-button">
             <button class="button primary-button"><i class='bx bx-edit'></i></button>
@@ -25,26 +27,54 @@ export const mapProductGroupTable = () => {
     });
 }
 
-export const mapResponsibleAgencySelect = () => {
-    const responsibleAgency = RESPONSIBLE_AGENCY;
-    const responsibleAgencySelect = document.getElementById('responsibleAgencySelect');
+export const mapProductTable = () => {
+  const products = PRODUCTS;
+  const productTable = document.getElementById('productTable');
 
-    responsibleAgency.forEach(agency => {
-        const option = document.createElement('option');
-        option.value = agency.value;
-        option.textContent = agency.name;
-        responsibleAgencySelect.appendChild(option);
-    });
+  products.forEach(product => {
+    const row = document.createElement('tr');
+    const statusClass =
+      product.serviceStatus === "ให้บริการ" ? "status-available" : "status-not-available";
+
+    row.innerHTML = `
+      <td>${product.productGroup}</td>
+      <td>${product.productCode}</td>
+      <td>${product.productName}</td>
+      <td>${product.productNameEn}</td>
+      <td><span class="${statusClass}">${product.serviceStatus}</span></td>
+      <td>
+        <div class="action-button">
+          <button class="button primary-button"><i class='bx bx-edit'></i></button>
+          <button class="button primary-button"><i class='bx bx-trash'></i></button>
+        </div>
+      </td>
+    `;
+
+    productTable.appendChild(row);
+  });
+};
+
+
+export const mapResponsibleAgencySelect = () => {
+  const responsibleAgency = RESPONSIBLE_AGENCY;
+  const responsibleAgencySelect = document.getElementById('responsibleAgencySelect');
+
+  responsibleAgency.forEach(agency => {
+      const option = document.createElement('option');
+      option.value = agency.value;
+      option.textContent = agency.name;
+      responsibleAgencySelect.appendChild(option);
+  });
 }
 
 export const mapProductGroupSelect = () => {
-  const productGroups = PRODUCT_GROUPS;
-  const productGroupSelect = document.getElementById('productGroupSelect');
+const productGroups = PRODUCT_GROUPS;
+const productGroupSelect = document.getElementById('productGroupSelect');
 
-  productGroups.forEach(group => {
-      const option = document.createElement('option');
-      option.value = group.productGroupNameEn;
-      option.textContent = group.productGroupName;
-      productGroupSelect.appendChild(option);
-  });
+productGroups.forEach(group => {
+    const option = document.createElement('option');
+    option.value = group.productGroupNameEn;
+    option.textContent = group.productGroupName;
+    productGroupSelect.appendChild(option);
+});
 }
