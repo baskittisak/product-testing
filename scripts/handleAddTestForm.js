@@ -1,80 +1,6 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // Handle collapse menu
-    const coll = document.getElementsByClassName("menu-collapse-container");
-    for (const item of coll) {
-        item.addEventListener("click", function () {
-            this.classList.toggle("active");
-            const content = this.nextElementSibling;
-            const chevron = this.querySelector('.bx.bxs-chevron-right');
-            if (content.style.maxHeight) {
-                content.style.maxHeight = null;
-                chevron.style.transform = "rotate(0deg)";
-            } else {
-                content.style.maxHeight = content.scrollHeight + "px";
-                chevron.style.transform = "rotate(90deg)";
-            }
-        });
-    }
+import { RESPONSIBLE_AGENCY } from './data.js';
 
-    // Handle link menu
-    const menuLinks = document.querySelectorAll('a');
 
-    const updateActiveMenu = (hash) => {
-        menuLinks.forEach(link => {
-            link.classList.toggle('menu-active', link.getAttribute('href') === `#${hash}`);
-        });
-    };
-
-    // Dynamic page loading based on hash
-    const loadPage = (hash) => {
-        let page = '';
-
-        if (hash === 'home') {
-            page = `pages/${hash}.html`;
-        } else if (hash.includes('create')) {
-            const section = hash.split('/')[0];
-            page = `pages/${section}/create.html`;
-        } else {
-            page = `pages/${hash}/index.html`;
-        }
-
-        const content = document.getElementById('content');
-
-        fetch(page)
-            .then(response => response.text())
-            .then(data => {
-                content.innerHTML = data;
-                updateActiveMenu(hash);
-            })
-            .catch(error => {
-                console.error('Error loading content:', error);
-                content.innerHTML = 'ไม่สามารถโหลดข้อมูล';
-            });
-    };
-
-    menuLinks.forEach(link => {
-        link.addEventListener('click', function (event) {
-            event.preventDefault();
-            const href = this.getAttribute('href')?.replace('#', '');
-            if (!href) return;
-
-            history.pushState({ page: href }, '', `#${href}`);
-            loadPage(href);
-        });
-    });
-
-    // Handle initial page or refresh
-    const initialHash = window.location.hash.replace('#', '') || 'home';
-    loadPage(initialHash);
-
-    // Handle popstate for back/forward navigation
-    window.addEventListener('popstate', () => {
-        const currentHash = window.location.hash.replace('#', '') || 'home';
-        loadPage(currentHash);
-    });
-});
-
-// Handle add test list
 let testCount = 1;
 
 const addTestForm = () => {
@@ -96,12 +22,14 @@ const addTestForm = () => {
     formColumn2.appendChild(createLabel("ชื่อรายการทดสอบ (ภาษาอังกฤษ)"));
     formColumn2.appendChild(createSearchInput("text", "กรอกชื่อรายการทดสอบ (ภาษาอังกฤษ)"));
 
+    const responsibleAgencyColumn = RESPONSIBLE_AGENCY.map((data) => ({
+        value: data.value,
+        label: data.name,
+    }))
+
     const formColumn3 = createSelectColumn("หน่วยงานที่รับผิดชอบ", [
-        { value: "", label: "เลือกหน่วยงานที่รับผิดชอบ", disabled: true },
-        { value: "national-office-technology-innovation", label: "สำนักงานบริหารการพัฒนาเทคโนโลยีและนวัตกรรมแห่งชาติ" },
-        { value: "cyber-data-security-center", label: "ศูนย์ความปลอดภัยด้านข้อมูลและไซเบอร์" },
-        { value: "institute-human-resource-education", label: "สถาบันพัฒนาทรัพยากรมนุษย์และการศึกษา" },
-        { value: "department-energy-environment-management", label: "กรมส่งเสริมการบริหารจัดการพลังงานและสิ่งแวดล้อม" }
+        { value: "", label: "เลือกหน่วยงานที่รับผิดชอบ", disabled: true, selected: true },
+        ...responsibleAgencyColumn
     ]);
 
     const formColumn4 = createFormColumn("ราคา", "number", "กรอกราคา");
@@ -275,8 +203,4 @@ const createTextAreaColumn = (labelText, placeholderText) => {
     return formColumn;
 };
 
-// Handle upload file
-const updateFile = (event) => {
-    const fileName = event.target.files[0] ? event.target.files[0].name : 'ยังไม่ได้เลือกไฟล์';
-    document.getElementById('file-name').textContent = fileName;
-}
+window.addTestForm = addTestForm;

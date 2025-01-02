@@ -1,0 +1,21 @@
+export const RESPONSIBLE_AGENCY = [
+    { id: '1', name: "กลุ่มวิศวกรรมวัสดุ", value: "materials-engineering-group" },
+    { id: '2', name: "กลุ่มวิเคราะห์สมบัติทางกายภาพ", value: "physical-properties-analysis-group" },
+    { id: '3', name: "กลุ่มวิเคราะห์โครงสร้างและพื้นผิว", value: "structure-and-surface-analysis-group" },
+    { id: '4', name: "กลุ่มสอบเทียบความยาวและมิติ", value: "length-and-dimension-calibration-group" },
+    { id: '5', name: "กลุ่มสอบเทียบมวลและเชิงกล", value: "mass-and-mechanical-calibration-group" },
+    { id: '6', name: "กลุ่มสอบเทียบอุณหภูมิและความชื้น", value: "temperature-and-humidity-calibration-group" },
+    { id: '7', name: "กลุ่มสอบเทียบไฟฟ้า การแพทย์และเคมี", value: "electrical-medical-and-chemical-calibration-group" },
+    { id: '8', name: "กลุ่มเคมีอินทรีย์", value: "organic-chemistry-group" },
+    { id: '9', name: "กลุ่มเคมีอนินทรีย์", value: "inorganic-chemistry-group" },
+    { id: '10', name: "กลุ่มสิ่งแวดล้อม", value: "environmental-group" },
+    { id: '11', name: "กลุ่มชีวเคมี", value: "biochemistry-group" },
+    { id: '12', name: "กลุ่มเทคโนโลยีชีวภาพ", value: "biotechnology-group" },
+    { id: '13', name: "กลุ่มจุลชีววิทยาโมเลกุล", value: "molecular-microbiology-group" },
+    { id: '14', name: "กลุ่มบริหารระบบคุณภาพ", value: "quality-management-group" },
+    { id: '15', name: "กลุ่มบริหารจัดการเครื่องมือและความปลอดภัยในห้องปฏิบัติการ", value: "lab-safety-and-equipment-management-group" },
+    { id: '16', name: "กลุ่มบริการวิเคราะห์ทดสอบและสอบเทียบ", value: "testing-and-calibration-service-group" },
+    { id: '17', name: "กลุ่มอำนวยการ", value: "administrative-group" },
+    { id: '18', name: "กลุ่มการเงินและพัสดุ", value: "finance-and-supplies-group" },
+    { id: '19', name: "กลุ่มบริหารโครงการ", value: "project-management-group" }
+];
