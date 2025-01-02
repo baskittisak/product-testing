@@ -18,17 +18,36 @@
     scrollbar-width: none;
 }
 
-.logo {
-    font-weight: 700;
-    font-size: 2rem;
-    color: var(--white);
-    display: flex;
-    justify-content: center;
+.logo-container {
     margin-bottom: 24px;
 }
 
-.logo a {
-    color: var(--white);
+.home-logo {
+    display: flex;
+    align-items: center;
+
+    > img {
+        margin-right: 8px;
+    }
+}
+
+.home-name {
+    display: flex;
+    flex-direction: column;
+
+    > span {
+        color: var(--white);
+    }
+
+    > span:first-child {
+        font-weight: 700;
+        font-size: 14px;
+    }
+
+    > span:last-child {
+        font-weight: 300;
+        font-size: 12px;
+    }
 }
 
 .menu-container {

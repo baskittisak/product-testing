@@ -10,9 +10,6 @@ product-testing/
 │   ├── product-group
 │   │   ├── index.html
 │   │   └── create.html
-│   ├── product
-│   │   ├── index.html
-│   │   └── create.html
 │   └── fee-management.html
 │       ├── index.html
 │       └── create.html
