@@ -19,3 +19,87 @@ export const RESPONSIBLE_AGENCY = [
     { id: '18', name: "กลุ่มการเงินและพัสดุ", value: "finance-and-supplies-group" },
     { id: '19', name: "กลุ่มบริหารโครงการ", value: "project-management-group" }
 ];
+
+export const PRODUCT_GROUPS = [
+    {
+      productGroupId: "PG001",
+      productGroupName: "กลุ่มผลิตภัณฑ์เครื่องมือวิทยาศาสตร์",
+      productGroupNameEn: "Scientific Instrument Products",
+      productType: "สอบเทียบ",
+      responsibleAgency: "กลุ่มวิศวกรรมวัสดุ",
+      serviceStatus: "ให้บริการ",
+      reason: ""
+    },
+    {
+      productGroupId: "PG002",
+      productGroupName: "กลุ่มผลิตภัณฑ์การสอบเทียบอุปกรณ์",
+      productGroupNameEn: "Equipment Calibration Products",
+      productType: "สอบเทียบ",
+      responsibleAgency: "กลุ่มวิเคราะห์สมบัติทางกายภาพ",
+      serviceStatus: "ให้บริการ",
+      reason: ""
+    },
+    {
+      productGroupId: "PG003",
+      productGroupName: "กลุ่มผลิตภัณฑ์การทดสอบวัสดุ",
+      productGroupNameEn: "Material Testing Products",
+      productType: "ทดสอบ",
+      responsibleAgency: "กลุ่มสอบเทียบความยาวและมิติ",
+      serviceStatus: "งดให้บริการ",
+      reason: "อุปกรณ์เสียหาย"
+    },
+    {
+      productGroupId: "PG004",
+      productGroupName: "กลุ่มผลิตภัณฑ์การสอบเทียบเครื่องมือ",
+      productGroupNameEn: "Instrument Calibration Products",
+      productType: "สอบเทียบ",
+      responsibleAgency: "กลุ่มสอบเทียบมวลและเชิงกล",
+      serviceStatus: "ให้บริการ",
+      reason: ""
+    },
+    {
+      productGroupId: "PG005",
+      productGroupName: "กลุ่มผลิตภัณฑ์การทดสอบทางเคมี",
+      productGroupNameEn: "Chemical Testing Products",
+      productType: "ทดสอบ",
+      responsibleAgency: "กลุ่มสอบเทียบอุณหภูมิและความชื้น",
+      serviceStatus: "งดให้บริการ",
+      reason: "ปัญหาทางเทคนิค"
+    },
+    {
+      productGroupId: "PG006",
+      productGroupName: "กลุ่มผลิตภัณฑ์การทดสอบทางไฟฟ้า",
+      productGroupNameEn: "Electrical Testing Products",
+      productType: "ทดสอบ",
+      responsibleAgency: "กลุ่มสอบเทียบไฟฟ้า การแพทย์และเคมี",
+      serviceStatus: "ให้บริการ",
+      reason: ""
+    },
+    {
+      productGroupId: "PG007",
+      productGroupName: "กลุ่มผลิตภัณฑ์การทดสอบทางกล",
+      productGroupNameEn: "Mechanical Testing Products",
+      productType: "ทดสอบ",
+      responsibleAgency: "กลุ่มเคมีอินทรีย์",
+      serviceStatus: "ให้บริการ",
+      reason: ""
+    },
+    {
+      productGroupId: "PG008",
+      productGroupName: "กลุ่มผลิตภัณฑ์การสอบเทียบเครื่องวัดความดัน",
+      productGroupNameEn: "Pressure Gauge Calibration Products",
+      productType: "สอบเทียบ",
+      responsibleAgency: "กลุ่มเคมีอนินทรีย์",
+      serviceStatus: "งดให้บริการ",
+      reason: "เครื่องมือชำรุด"
+    },
+    {
+      productGroupId: "PG009",
+      productGroupName: "กลุ่มผลิตภัณฑ์การทดสอบความแข็ง",
+      productGroupNameEn: "Hardness Testing Products",
+      productType: "ทดสอบ",
+      responsibleAgency: "กลุ่มบริการวิเคราะห์ทดสอบและสอบเทียบ",
+      serviceStatus: "ให้บริการ",
+      reason: ""
+    }
+];

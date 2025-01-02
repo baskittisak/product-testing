@@ -1,3 +1,5 @@
+import { mapProductGroupTable } from "./handleMapData.js";
+
 document.addEventListener("DOMContentLoaded", () => {
     // Handle collapse menu
     const coll = document.getElementsByClassName("menu-collapse-container");
@@ -44,6 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(response => response.text())
             .then(data => {
                 content.innerHTML = data;
+                mapProductGroupTable();
                 updateActiveMenu(hash);
             })
             .catch(error => {
