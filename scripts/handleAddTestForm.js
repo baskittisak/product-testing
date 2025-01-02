@@ -3,7 +3,7 @@ import { RESPONSIBLE_AGENCY } from './data.js';
 
 let testCount = 1;
 
-const addTestForm = () => {
+const addTestForm = (testData, indexTestData) => {
     const newSubForm = document.createElement("div");
     newSubForm.classList.add("sub-form-container");
 
@@ -11,7 +11,9 @@ const addTestForm = () => {
 
     const title = document.createElement("h4");
     title.classList.add("sub-form-title");
-    title.textContent = `รายการทดสอบ ${testCount}`;
+    if (!testData) {
+        title.textContent = `รายการทดสอบ ${testCount}`;
+    }
 
     const formColumn1 = createFormColumn("รหัสรายการ", "text", "กรอกรหัสรายการ");
 
@@ -75,9 +77,59 @@ const addTestForm = () => {
     newSubForm.appendChild(formButton);
     formButton.appendChild(deleteButton);
 
+    if (testData) {
+        const {
+            testCode,
+            testName,
+            testNameEn,
+            responsibleAgency,
+            price,
+            executionTime,
+            testType,
+            iso17025,
+            note,
+            status,
+            reason
+        } = testData;
+
+        title.textContent = `รายการทดสอบ ${indexTestData + 1}`;
+
+        formColumn1.querySelector('input').value = testCode;
+        formColumn2.querySelector('input[placeholder="กรอกชื่อรายการทดสอบ"]').value = testName;
+        formColumn2.querySelector('input[placeholder="กรอกชื่อรายการทดสอบ (ภาษาอังกฤษ)"]').value = testNameEn;
+
+        const responsibleAgencySelect = formColumn3.querySelector('select');
+        const option = Array.from(responsibleAgencySelect.options).find(option => option.textContent === responsibleAgency);
+        if (option) option.selected = true;
+
+        formColumn4.querySelector('input').value = price;
+        formColumn4.querySelector('input[placeholder="กรอกระยะเวลาดำเนินงาน (วัน)"]').value = executionTime;
+
+        const testTypeRadios = formColumn5.querySelectorAll('input');
+        testTypeRadios.forEach(radio => {
+            if (radio.value === testType.toLowerCase()) {
+                radio.checked = true;
+            }
+        });
+
+        formColumn6.querySelector('input').checked = iso17025;
+        formColumn7.querySelector('textarea').value = note;
+
+        const statusRadios = formColumn8.querySelectorAll('input');
+        statusRadios.forEach(radio => {
+            if (radio.value === (status === "ให้บริการ" ? "available" : "not-available")) {
+                radio.checked = true;
+            }
+        });
+
+        formColumn9.querySelector('textarea').value = reason;
+    }
+
     document.getElementById("testFormContainer").appendChild(newSubForm);
 
-    testCount++;
+    if (!testData) {
+        testCount++;
+    }
 };
 
 const updateTestCount = () => {

@@ -141,6 +141,12 @@ export const mapProductGroupForm = (productGroupId) => {
 export const mapProductForm = (productCode) => {
   const product = PRODUCTS.find((product) => product.productCode === productCode);
 
+  const codeProduct = document.querySelectorAll('span[class="code-product"]');
+  codeProduct.forEach((span) => {
+    const textNode = document.createTextNode(" " +product.productCode);
+    span.appendChild(textNode);
+  });
+
   const productGroupSelect = document.getElementById("productGroupSelect");
   const option = Array.from(productGroupSelect.options).find(option => option.textContent === product.productGroup);
   option.selected = true;
@@ -163,6 +169,12 @@ export const mapProductForm = (productCode) => {
 
   const reasonTextarea = document.querySelector('textarea[placeholder="กรอกสาเหตุการงดให้บริการ"]');
   reasonTextarea.value = product.reason;
+
+  if (product.testItems.length) {
+    product.testItems.forEach((testItem, index) => {
+      addTestForm(testItem, index);
+    });
+  }
 }
 
 export const mapFeeForm = (feeId) => {
