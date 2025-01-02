@@ -1,9 +1,10 @@
 import { 
     mapProductGroupTable,
+    mapProductTable,
+    mapFeeTable,
     mapResponsibleAgencySelect,
     mapProductGroupSelect,
-    mapProductTable,
-    mapFeeTable
+    mapProductGroupForm
 } from "./handleMapData.js";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -38,12 +39,16 @@ document.addEventListener("DOMContentLoaded", () => {
         let page = '';
         const isHome = hash === 'home';
         const isCreate = hash.includes('create');
+        const isEdit = hash.includes('edit');
 
         if (isHome) {
             page = `pages/${hash}.html`;
         } else if (isCreate) {
             const section =  hash.split('/')[0];
             page = `pages/${section}/create.html`;
+        } else if (isEdit) {
+            const section =  hash.split('/')[0];
+            page = `pages/${section}/edit.html`;
         } else {
             page = `pages/${hash}/index.html`;
         }
@@ -55,10 +60,11 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(data => {
                 content.innerHTML = data;
                 const section =  hash.split('/')[0];
-                if (!isHome && !isCreate) {
+                if (!isHome && !isCreate && !isEdit) {
                     selectedFunctionMapTable(section);
-                } else if (isCreate) {
-                    selectedFunctionMapForm(section);
+                } else if (isCreate || isEdit) {
+                    const id = isEdit && hash.split('#edit/')[1];
+                    selectedFunctionMapForm(section, id);
                 }
                 updateActiveMenu(hash);
             })
@@ -108,13 +114,14 @@ const selectedFunctionMapTable = (section) => {
     }
 }
 
-const selectedFunctionMapForm = (section) => {
+const selectedFunctionMapForm = (section, id) => {
     switch (section) {
         case "product":
             mapProductGroupSelect();
             break;
         case "product-group":
             mapResponsibleAgencySelect();
+            mapProductGroupForm(id);
             break;
         case "fee-management":
 

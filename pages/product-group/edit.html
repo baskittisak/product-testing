@@ -1,0 +1,77 @@
+<div class="box-container">
+    <div class="box-header">
+        <span>
+            <h4>แก้ไชกลุ่มผลิตภัณฑ์: <span class="id-product-group"></span></h4>
+            <p>กรุณาระบุข้อมูลด้านล่างให้ครบถ้วน</p>
+        </span>
+    </div>
+    <div class="form-header">
+        <h4>ข้อมูลกลุ่มผลิตภัณฑ์: <span class="id-product-group"></span></h4>
+    </div>
+    <div class="form-container" id="formContainer">
+        <div class="form-column">
+            <p>รหัสกลุ่มผลิตภัณฑ์</p>
+            <div class="search-input">
+                <input type="text" placeholder="กรอกรหัสกลุ่มผลิตภัณฑ์" />
+            </div>
+        </div>
+        <div class="form-column">
+            <p>ชื่อกลุ่มผลิตภัณฑ์</p>
+            <div class="search-input">
+                <input type="text" placeholder="กรอกชื่อกลุ่มผลิตภัณฑ์" />
+            </div>
+            <p>ชื่อกลุ่มผลิตภัณฑ์ (ภาษาอังกฤษ)</p>
+            <div class="search-input">
+                <input type="text" placeholder="กรอกชื่อกลุ่มผลิตภัณฑ์ (ภาษาอังกฤษ)" />
+            </div>
+        </div>
+        <div class="form-column">
+            <p>ประเภทกลุ่มผลิตภัณฑ์</p>
+            <div class="search-input">
+                <label class="radio">
+                    <input type="radio" name="type-product-group" value="testing" />
+                    <span></span>
+                    ทดสอบ
+                </label>
+                <label class="radio">
+                    <input type="radio" name="type-product-group" value="comparison" />
+                    <span></span>
+                    สอบเทียบ
+                </label>
+            </div>
+        </div>
+        <div class="form-column">
+            <p>หน่วยงานที่รับผิดชอบ</p>
+            <div class="search-input">
+                <select id="responsibleAgencySelect">
+                    <option value="" disabled selected>เลือกหน่วยงานที่รับผิดชอบ</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-column">
+            <p>สถานะการให้บริการ</p>
+            <div class="search-input">
+                <label class="radio">
+                    <input type="radio" name="status-product-group" value="available" />
+                    <span></span>
+                    ให้บริการ
+                </label>
+                <label class="radio">
+                    <input type="radio" name="status-product-group" value="not-available" />
+                    <span></span>
+                    งดให้บริการ
+                </label>
+            </div>
+        </div>
+        <div class="form-column">
+            <p>สาเหตุการงดให้บริการ</p>
+            <div class="search-input">
+                <textarea placeholder="กรอกสาเหตุการงดให้บริการ"></textarea>
+            </div>
+        </div>
+        <div class="form-button">
+            <button class="button secondary-button">ล้างข้อมูล</button>
+            <button class="button primary-button"><i class='bx bxs-save' ></i><span>บันทึกข้อมูล</span></button>
+        </div>
+    </div>
+</div>

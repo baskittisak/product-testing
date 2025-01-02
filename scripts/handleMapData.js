@@ -102,3 +102,41 @@ productGroups.forEach(group => {
     productGroupSelect.appendChild(option);
 });
 }
+
+export const mapProductGroupForm = (productGroupId) => {
+  const productGroup = PRODUCT_GROUPS.find((group) => group.productGroupId === productGroupId);
+
+  const idProductGroup = document.querySelectorAll('span[class="id-product-group"]');
+  idProductGroup.forEach((span) => {
+    const textNode = document.createTextNode(productGroup.productGroupId);
+    span.appendChild(textNode);
+  });
+
+  document.querySelector('input[placeholder="กรอกรหัสกลุ่มผลิตภัณฑ์"]').value = productGroup.productGroupId;
+  document.querySelector('input[placeholder="กรอกชื่อกลุ่มผลิตภัณฑ์"]').value = productGroup.productGroupName;
+  document.querySelector('input[placeholder="กรอกชื่อกลุ่มผลิตภัณฑ์ (ภาษาอังกฤษ)"]').value = productGroup.productGroupNameEn;
+
+
+  const productTypeRadio = document.querySelectorAll('input[name="type-product-group"]');
+  productTypeRadio.forEach(radio => {
+      if (radio.value === (productGroup.productType === "ทดสอบ" ? "testing" : "comparison")) {
+          radio.checked = true;
+      }
+  });
+
+  const responsibleAgencySelect = document.getElementById("responsibleAgencySelect");
+  const option = document.createElement("option");
+  option.value = productGroup.responsibleAgency;
+  option.textContent = productGroup.responsibleAgency;
+  responsibleAgencySelect.appendChild(option);
+  responsibleAgencySelect.value = productGroup.responsibleAgency;
+
+  const serviceStatusRadio = document.querySelectorAll('input[name="status-product-group"]');
+  serviceStatusRadio.forEach(radio => {
+      if (radio.value === (productGroup.serviceStatus === "ให้บริการ" ? "available" : "not-available")) {
+          radio.checked = true;
+      }
+  });
+
+  document.querySelector('textarea[placeholder="กรอกสาเหตุการงดให้บริการ"]').value = productGroup.reason;
+}
