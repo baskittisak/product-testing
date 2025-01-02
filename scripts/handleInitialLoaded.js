@@ -1,4 +1,4 @@
-import { mapProductGroupTable, mapResponsibleAgencySelect } from "./handleMapData.js";
+import { mapProductGroupTable, mapResponsibleAgencySelect, mapProductGroupSelect } from "./handleMapData.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     // Handle collapse menu
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
 const selectedFunctionMapTable = (section) => {
     switch (section) {
         case "product":
-
+            mapProductGroupSelect();
             break;
         case "product-group":
             mapProductGroupTable();

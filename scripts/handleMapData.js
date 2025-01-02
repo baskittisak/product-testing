@@ -36,3 +36,15 @@ export const mapResponsibleAgencySelect = () => {
         responsibleAgencySelect.appendChild(option);
     });
 }
+
+export const mapProductGroupSelect = () => {
+  const productGroups = PRODUCT_GROUPS;
+  const productGroupSelect = document.getElementById('productGroupSelect');
+
+  productGroups.forEach(group => {
+      const option = document.createElement('option');
+      option.value = group.productGroupNameEn;
+      option.textContent = group.productGroupName;
+      productGroupSelect.appendChild(option);
+  });
+}

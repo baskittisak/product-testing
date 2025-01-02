@@ -103,3 +103,153 @@ export const PRODUCT_GROUPS = [
       reason: ""
     }
 ];
+
+export const PRODUCTS = [
+    {
+      productGroup: "กลุ่มผลิตภัณฑ์เครื่องมือวิทยาศาสตร์",
+      productCode: "P001",
+      productName: "เครื่องมือวิทยาศาสตร์รุ่น X",
+      productNameEn: "Scientific Instrument Model X",
+      serviceStatus: "ให้บริการ",
+      reason: "",
+      testItems: [
+        {
+          testCode: "T001",
+          testName: "การสอบเทียบเครื่องมือ",
+          testNameEn: "Instrument Calibration",
+          responsibleAgency: "กลุ่มวิศวกรรมวัสดุ",
+          price: 5000,
+          executionTime: 5,
+          testType: "Mandatory",
+          iso17025: true,
+          note: "ทดสอบเครื่องมือใหม่",
+          status: "ให้บริการ",
+          reason: ""
+        },
+        {
+          testCode: "T002",
+          testName: "การทดสอบความแม่นยำของเครื่องมือ",
+          testNameEn: "Instrument Precision Test",
+          responsibleAgency: "กลุ่มวิศวกรรมวัสดุ",
+          price: 6000,
+          executionTime: 4,
+          testType: "Mandatory",
+          iso17025: true,
+          note: "ทดสอบความแม่นยำในการวัด",
+          status: "ให้บริการ",
+          reason: ""
+        },
+        {
+          testCode: "T003",
+          testName: "การทดสอบความเสถียรของเครื่องมือ",
+          testNameEn: "Instrument Stability Test",
+          responsibleAgency: "กลุ่มวิศวกรรมวัสดุ",
+          price: 4500,
+          executionTime: 3,
+          testType: "Optional",
+          iso17025: true,
+          note: "ทดสอบความเสถียรของเครื่องมือในสภาพแวดล้อมต่างๆ",
+          status: "ให้บริการ",
+          reason: ""
+        }
+      ]
+    },
+    {
+      productGroup: "กลุ่มผลิตภัณฑ์การสอบเทียบอุปกรณ์",
+      productCode: "P002",
+      productName: "อุปกรณ์สอบเทียบเครื่องมือ A",
+      productNameEn: "Equipment Calibration Device A",
+      serviceStatus: "ให้บริการ",
+      reason: "",
+      testItems: [
+        {
+          testCode: "T002",
+          testName: "การสอบเทียบเครื่องมือ A",
+          testNameEn: "Device A Calibration",
+          responsibleAgency: "กลุ่มวิเคราะห์สมบัติทางกายภาพ",
+          price: 7000,
+          executionTime: 3,
+          testType: "Optional",
+          iso17025: true,
+          note: "ทดสอบเฉพาะอุปกรณ์รุ่น A",
+          status: "ให้บริการ",
+          reason: ""
+        },
+        {
+          testCode: "T003",
+          testName: "การทดสอบประสิทธิภาพของอุปกรณ์ A",
+          testNameEn: "Device A Performance Test",
+          responsibleAgency: "กลุ่มวิเคราะห์สมบัติทางกายภาพ",
+          price: 8000,
+          executionTime: 4,
+          testType: "Mandatory",
+          iso17025: true,
+          note: "ทดสอบประสิทธิภาพและความแม่นยำของอุปกรณ์ A",
+          status: "ให้บริการ",
+          reason: ""
+        },
+        {
+          testCode: "T004",
+          testName: "การทดสอบความทนทานของอุปกรณ์ A",
+          testNameEn: "Device A Durability Test",
+          responsibleAgency: "กลุ่มวิเคราะห์สมบัติทางกายภาพ",
+          price: 7500,
+          executionTime: 5,
+          testType: "Optional",
+          iso17025: true,
+          note: "ทดสอบความทนทานของอุปกรณ์ A ต่อสภาพแวดล้อมต่างๆ",
+          status: "ให้บริการ",
+          reason: ""
+        }
+      ]
+    },
+    {
+      productGroup: "กลุ่มผลิตภัณฑ์การทดสอบความแข็ง",
+      productCode: "P009",
+      productName: "วัสดุทดสอบความแข็ง",
+      productNameEn: "Hardness Test Material",
+      serviceStatus: "ให้บริการ",
+      reason: "",
+      testItems: [
+        {
+          testCode: "T009",
+          testName: "การทดสอบความแข็งวัสดุ",
+          testNameEn: "Material Hardness Test",
+          responsibleAgency: "กลุ่มบริการวิเคราะห์ทดสอบและสอบเทียบ",
+          price: 13000,
+          executionTime: 6,
+          testType: "Mandatory",
+          iso17025: true,
+          note: "ทดสอบความแข็งของวัสดุ",
+          status: "ให้บริการ",
+          reason: ""
+        },
+        {
+          testCode: "T010",
+          testName: "การทดสอบความต้านทานการสึกหรอของวัสดุ",
+          testNameEn: "Material Wear Resistance Test",
+          responsibleAgency: "กลุ่มบริการวิเคราะห์ทดสอบและสอบเทียบ",
+          price: 15000,
+          executionTime: 7,
+          testType: "Mandatory",
+          iso17025: true,
+          note: "ทดสอบความต้านทานการสึกหรอของวัสดุที่ใช้ในอุตสาหกรรม",
+          status: "ให้บริการ",
+          reason: ""
+        },
+        {
+          testCode: "T011",
+          testName: "การทดสอบความต้านทานแรงดันวัสดุ",
+          testNameEn: "Material Pressure Resistance Test",
+          responsibleAgency: "กลุ่มบริการวิเคราะห์ทดสอบและสอบเทียบ",
+          price: 12000,
+          executionTime: 5,
+          testType: "Optional",
+          iso17025: true,
+          note: "ทดสอบความต้านทานแรงดันของวัสดุ",
+          status: "ให้บริการ",
+          reason: ""
+        }
+      ]
+    }
+];
