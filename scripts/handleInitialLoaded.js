@@ -4,7 +4,8 @@ import {
     mapFeeTable,
     mapResponsibleAgencySelect,
     mapProductGroupSelect,
-    mapProductGroupForm
+    mapProductGroupForm,
+    mapFeeForm
 } from "./handleMapData.js";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -124,7 +125,7 @@ const selectedFunctionMapForm = (section, id) => {
             mapProductGroupForm(id);
             break;
         case "fee-management":
-
+            mapFeeForm(id);
             break;
         default:
             break;

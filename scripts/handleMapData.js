@@ -108,7 +108,7 @@ export const mapProductGroupForm = (productGroupId) => {
 
   const idProductGroup = document.querySelectorAll('span[class="id-product-group"]');
   idProductGroup.forEach((span) => {
-    const textNode = document.createTextNode(productGroup.productGroupId);
+    const textNode = document.createTextNode(" " + productGroup.productGroupId);
     span.appendChild(textNode);
   });
 
@@ -139,4 +139,26 @@ export const mapProductGroupForm = (productGroupId) => {
   });
 
   document.querySelector('textarea[placeholder="กรอกสาเหตุการงดให้บริการ"]').value = productGroup.reason;
+}
+
+export const mapFeeForm = (feeId) => {
+  const feeData = FEE_DATA.find((fee) => fee.id === feeId);
+
+  const idFee = document.querySelectorAll('span[class="id-fee"]');
+  idFee.forEach((span) => {
+    const textNode = document.createTextNode(" " +feeData.id);
+    span.appendChild(textNode);
+  });
+
+  const dateInput = document.querySelector('input[type="date"]');
+  const formattedDate = feeData.date.split('/').reverse().join('-');
+  dateInput.value = formattedDate;
+
+  const improvementDetailTextarea = document.querySelector('textarea[placeholder="กรอกรายละเอียดการปรับปรุง"]');
+  improvementDetailTextarea.value = feeData.improvementDetail;
+
+  const fileNameSpan = document.querySelector('#fileName');
+
+  const fileName = feeData.document;
+  fileNameSpan.textContent = fileName;
 }

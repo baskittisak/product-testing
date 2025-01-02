@@ -1,0 +1,43 @@
+<div class="box-container">
+    <div class="box-header">
+        <span>
+            <h4>แก้ไขการปรับปรุงบัญชี:<span class="id-fee"></span> </h4>
+            <p>กรุณาระบุข้อมูลด้านล่างให้ครบถ้วน</p>
+        </span>
+    </div>
+    <div class="form-header">
+        <h4>ข้อมูลการปรับปรุงบัญชี: <span class="id-fee"></span></h4>
+    </div>
+    <div class="form-container">
+        <div class="form-column">
+            <p>วันที่</p>
+            <div class="search-input">
+                <input type="date" placeholder="เลือกวันที่" />
+            </div>
+        </div>
+        <div class="form-column">
+            <p>รายละเอียดการปรับปรุง</p>
+            <div class="search-input">
+                <textarea placeholder="กรอกรายละเอียดการปรับปรุง"></textarea>
+            </div>
+        </div>
+        <div class="form-column">
+            <p>แนบเอกสาร</p>
+            <div class="search-input">
+                <input
+                    type="file"
+                    id="file-upload"
+                    class="input-file"
+                    accept=".pdf, .doc, .docx, .xls, .xlsx"
+                    onchange="updateFile(event)"
+                />
+                <label for="file-upload" class="custom-input-file">เลือกไฟล์</label>
+                <span id="fileName" class="custom-input-file-name">ยังไม่ได้เลือกไฟล์</span>
+            </div>
+        </div>
+        <div class="form-button">
+            <button class="button secondary-button">ล้างข้อมูล</button>
+            <button class="button primary-button"><i class='bx bxs-save' ></i><span>บันทึกข้อมูล</span></button>
+        </div>
+    </div>
+</div>
