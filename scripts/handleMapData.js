@@ -1,4 +1,4 @@
-import { PRODUCT_GROUPS } from "./data.js";
+import { PRODUCT_GROUPS, RESPONSIBLE_AGENCY } from "./data.js";
 
 export const mapProductGroupTable = () => {
     const productGroups = PRODUCT_GROUPS;
@@ -22,5 +22,17 @@ export const mapProductGroupTable = () => {
       `;
 
       productGroupTable.appendChild(row);
+    });
+}
+
+export const mapResponsibleAgencySelect = () => {
+    const responsibleAgency = RESPONSIBLE_AGENCY;
+    const responsibleAgencySelect = document.getElementById('responsibleAgencySelect');
+
+    responsibleAgency.forEach(agency => {
+        const option = document.createElement('option');
+        option.value = agency.value;
+        option.textContent = agency.name;
+        responsibleAgencySelect.appendChild(option);
     });
 }

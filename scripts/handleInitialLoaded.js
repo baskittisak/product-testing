@@ -1,4 +1,4 @@
-import { mapProductGroupTable } from "./handleMapData.js";
+import { mapProductGroupTable, mapResponsibleAgencySelect } from "./handleMapData.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     // Handle collapse menu
@@ -50,6 +50,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 content.innerHTML = data;
                 if (!isHome && !isCreate) {
                     mapProductGroupTable();
+                } else if (isCreate) {
+                    mapResponsibleAgencySelect();
                 }
                 updateActiveMenu(hash);
             })
