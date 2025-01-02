@@ -382,26 +382,31 @@ export const PRODUCTS = [
 
 export const FEE_DATA = [
     {
+      id: '1',
       date: "08/10/2024",
       improvementDetail: "ปรับปรุงอัตราค่าธรรมเนียมการทดสอบวัสดุเพื่อให้สอดคล้องกับราคาตลาด",
       document: "adjust_testing_fee_materials.pdf"
     },
     {
+      id: '2',
       date: "17/01/2024",
       improvementDetail: "เพิ่มค่าธรรมเนียมสำหรับการสอบเทียบเครื่องมือใหม่ในกลุ่มผลิตภัณฑ์การสอบเทียบเครื่องมือ",
       document: "new_tool_calibration_fee.docx"
     },
     {
+      id: '3',
       date: "10/09/2024",
       improvementDetail: "ปรับลดค่าธรรมเนียมการทดสอบทางเคมีเพื่อลดภาระค่าใช้จ่ายสำหรับลูกค้า",
       document: "reduced_chemical_testing_fee.pdf"
     },
     {
+      id: '4',
       date: "29/12/2024",
       improvementDetail: "เพิ่มค่าธรรมเนียมการทดสอบทางกลในกลุ่มผลิตภัณฑ์การทดสอบวัสดุ",
       document: "new_mechanical_testing_fee.docx"
     },
     {
+      id: '5',
       date: "16/12/2024",
       improvementDetail: "ปรับปรุงรายละเอียดค่าธรรมเนียมการสอบเทียบเครื่องวัดความดันให้ตรงตามมาตรฐานสากล",
       document: "pressure_gauge_calibration_fee.xlsx"

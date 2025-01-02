@@ -17,7 +17,7 @@ export const mapProductGroupTable = () => {
         <td><span class="${statusClass}">${group.serviceStatus}</span></td>
         <td>
           <div class="action-button">
-            <button class="button primary-button"><i class='bx bx-edit'></i></button>
+            <button class="button primary-button" onclick="window.location.assign('/#product-group/#edit/${group.productGroupId}')"><i class='bx bx-edit'></i></button>
             <button class="button primary-button"><i class='bx bx-trash'></i></button>
           </div>
         </td>
@@ -44,7 +44,7 @@ export const mapProductTable = () => {
       <td><span class="${statusClass}">${product.serviceStatus}</span></td>
       <td>
         <div class="action-button">
-          <button class="button primary-button"><i class='bx bx-edit'></i></button>
+          <button class="button primary-button" onclick="window.location.assign('/#product/#edit/${product.productCode}')"><i class='bx bx-edit'></i></button>
           <button class="button primary-button"><i class='bx bx-trash'></i></button>
         </div>
       </td>
@@ -67,7 +67,7 @@ export const mapFeeTable = () => {
       <td><a href="${fee.document}" target="_blank">ดาวน์โหลดเอกสาร</a></td>
       <td>
           <div class="action-button">
-              <button class="button primary-button"><i class='bx bx-edit'></i></button>
+              <button class="button primary-button" onclick="window.location.assign('/#fee-management/#edit/${fee.id}')"><i class='bx bx-edit'></i></button>
               <button class="button primary-button"><i class='bx bx-trash'></i></button>
           </div>
       </td>
