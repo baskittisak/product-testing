@@ -110,7 +110,7 @@ const selectedFunctionMapTable = (section) => {
 const selectedFunctionMapForm = (section) => {
     switch (section) {
         case "product":
-
+            mapProductGroupSelect();
             break;
         case "product-group":
             mapResponsibleAgencySelect();
