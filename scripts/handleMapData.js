@@ -1,4 +1,4 @@
-import { PRODUCT_GROUPS, RESPONSIBLE_AGENCY, PRODUCTS } from "./data.js";
+import { PRODUCT_GROUPS, RESPONSIBLE_AGENCY, PRODUCTS, FEE_DATA } from "./data.js";
 
 export const mapProductGroupTable = () => {
     const productGroups = PRODUCT_GROUPS;
@@ -51,6 +51,30 @@ export const mapProductTable = () => {
     `;
 
     productTable.appendChild(row);
+  });
+};
+
+export const mapFeeTable = () => {
+  const feeData = FEE_DATA;
+  const feeTable = document.getElementById('feeTable');
+
+  feeData.forEach(fee => {
+    const row = document.createElement('tr');
+
+    row.innerHTML = `
+      <td>${fee.date}</td>
+      <td>${fee.improvementDetail}</td>
+      <td><a href="${fee.document}" target="_blank">ดาวน์โหลดเอกสาร</a></td>
+      <td>
+          <div class="action-button">
+              <button class="button primary-button"><i class='bx bx-edit'></i></button>
+              <button class="button primary-button"><i class='bx bx-trash'></i></button>
+          </div>
+      </td>
+    `;
+
+
+    feeTable.appendChild(row);
   });
 };
 

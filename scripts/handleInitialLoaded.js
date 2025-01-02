@@ -2,7 +2,8 @@ import {
     mapProductGroupTable,
     mapResponsibleAgencySelect,
     mapProductGroupSelect,
-    mapProductTable
+    mapProductTable,
+    mapFeeTable
 } from "./handleMapData.js";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -100,7 +101,7 @@ const selectedFunctionMapTable = (section) => {
             mapProductGroupTable();
             break;
         case "fee-management":
-
+            mapFeeTable();
             break;
         default:
             break;
