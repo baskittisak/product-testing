@@ -1,51 +1,36 @@
 <div class="box-container">
     <div class="box-header">
         <span>
-            <h4>แก้ไขกลุ่มผลิตภัณฑ์: <span class="id-product-group"></span></h4>
+            <h4>แก้ไขผลิตภัณฑ์: <span class="code-product"></span></h4>
             <p>กรุณาระบุข้อมูลด้านล่างให้ครบถ้วน</p>
         </span>
     </div>
     <div class="form-header">
-        <h4>ข้อมูลกลุ่มผลิตภัณฑ์: <span class="id-product-group"></span></h4>
+        <h4>ข้อมูลผลิตภัณฑ์: <span class="code-product"></span></h4>
     </div>
-    <div class="form-container" id="formContainer">
+    <div class="form-container">
         <div class="form-column">
-            <p>รหัสกลุ่มผลิตภัณฑ์</p>
+            <p>กลุ่มผลิตภัณฑ์</p>
             <div class="search-input">
-                <input type="text" placeholder="กรอกรหัสกลุ่มผลิตภัณฑ์" />
-            </div>
-        </div>
-        <div class="form-column">
-            <p>ชื่อกลุ่มผลิตภัณฑ์</p>
-            <div class="search-input">
-                <input type="text" placeholder="กรอกชื่อกลุ่มผลิตภัณฑ์" />
-            </div>
-            <p>ชื่อกลุ่มผลิตภัณฑ์ (ภาษาอังกฤษ)</p>
-            <div class="search-input">
-                <input type="text" placeholder="กรอกชื่อกลุ่มผลิตภัณฑ์ (ภาษาอังกฤษ)" />
-            </div>
-        </div>
-        <div class="form-column">
-            <p>ประเภทกลุ่มผลิตภัณฑ์</p>
-            <div class="search-input">
-                <label class="radio">
-                    <input type="radio" name="type-product-group" value="testing" />
-                    <span></span>
-                    ทดสอบ
-                </label>
-                <label class="radio">
-                    <input type="radio" name="type-product-group" value="comparison" />
-                    <span></span>
-                    สอบเทียบ
-                </label>
-            </div>
-        </div>
-        <div class="form-column">
-            <p>หน่วยงานที่รับผิดชอบ</p>
-            <div class="search-input">
-                <select id="responsibleAgencySelect">
-                    <option value="" disabled selected>เลือกหน่วยงานที่รับผิดชอบ</option>
+                <select id="productGroupSelect">
+                    <option value="" disabled selected>เลือกกลุ่มผลิตภัณฑ์</option>
                 </select>
+            </div>
+        </div>
+        <div class="form-column">
+            <p>รหัสผลิตภัณฑ์</p>
+            <div class="search-input">
+                <input type="text" placeholder="กรอกรหัสผลิตภัณฑ์" />
+            </div>
+        </div>
+        <div class="form-column">
+            <p>ชื่อผลิตภัณฑ์</p>
+            <div class="search-input">
+                <input type="text" placeholder="กรอกชื่อผลิตภัณฑ์" />
+            </div>
+            <p>ชื่อผลิตภัณฑ์ (ภาษาอังกฤษ)</p>
+            <div class="search-input">
+                <input type="text" placeholder="กรอกชื่อผลิตภัณฑ์ (ภาษาอังกฤษ)" />
             </div>
         </div>
         <div class="form-column">
@@ -69,6 +54,10 @@
                 <textarea placeholder="กรอกสาเหตุการงดให้บริการ"></textarea>
             </div>
         </div>
+        <button class="button primary-button" onclick="addTestForm()">
+            <i class='bx bx-plus-circle' ></i><span>เพิ่มรายการทดสอบ</span>
+        </button>
+        <div id="testFormContainer"></div>
         <div class="form-button">
             <button class="button secondary-button">ล้างข้อมูล</button>
             <button class="button primary-button"><i class='bx bxs-save' ></i><span>บันทึกข้อมูล</span></button>

@@ -5,6 +5,7 @@ import {
     mapResponsibleAgencySelect,
     mapProductGroupSelect,
     mapProductGroupForm,
+    mapProductForm,
     mapFeeForm
 } from "./handleMapData.js";
 
@@ -119,13 +120,14 @@ const selectedFunctionMapForm = (section, id) => {
     switch (section) {
         case "product":
             mapProductGroupSelect();
+            id && mapProductForm(id);
             break;
         case "product-group":
             mapResponsibleAgencySelect();
-            mapProductGroupForm(id);
+            id && mapProductGroupForm(id);
             break;
         case "fee-management":
-            mapFeeForm(id);
+            id && mapFeeForm(id);
             break;
         default:
             break;

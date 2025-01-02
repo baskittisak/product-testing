@@ -125,11 +125,8 @@ export const mapProductGroupForm = (productGroupId) => {
   });
 
   const responsibleAgencySelect = document.getElementById("responsibleAgencySelect");
-  const option = document.createElement("option");
-  option.value = productGroup.responsibleAgency;
-  option.textContent = productGroup.responsibleAgency;
-  responsibleAgencySelect.appendChild(option);
-  responsibleAgencySelect.value = productGroup.responsibleAgency;
+  const option = Array.from(responsibleAgencySelect.options).find(option => option.textContent === productGroup.responsibleAgency);
+  option.selected = true;
 
   const serviceStatusRadio = document.querySelectorAll('input[name="status-product-group"]');
   serviceStatusRadio.forEach(radio => {
@@ -139,6 +136,33 @@ export const mapProductGroupForm = (productGroupId) => {
   });
 
   document.querySelector('textarea[placeholder="กรอกสาเหตุการงดให้บริการ"]').value = productGroup.reason;
+}
+
+export const mapProductForm = (productCode) => {
+  const product = PRODUCTS.find((product) => product.productCode === productCode);
+
+  const productGroupSelect = document.getElementById("productGroupSelect");
+  const option = Array.from(productGroupSelect.options).find(option => option.textContent === product.productGroup);
+  option.selected = true;
+
+  const productCodeInput = document.querySelector('input[placeholder="กรอกรหัสผลิตภัณฑ์"]');
+  productCodeInput.value = product.productCode;
+
+  const productNameInput = document.querySelector('input[placeholder="กรอกชื่อผลิตภัณฑ์"]');
+  productNameInput.value = product.productName;
+
+  const productNameEnInput = document.querySelector('input[placeholder="กรอกชื่อผลิตภัณฑ์ (ภาษาอังกฤษ)"]');
+  productNameEnInput.value = product.productNameEn;
+
+  const serviceStatusRadios = document.querySelectorAll('input[name="status-product-group"]');
+  serviceStatusRadios.forEach((radio) => {
+      if (radio.value === (product.serviceStatus === "ให้บริการ" ? "available" : "not-available")) {
+          radio.checked = true;
+      }
+  });
+
+  const reasonTextarea = document.querySelector('textarea[placeholder="กรอกสาเหตุการงดให้บริการ"]');
+  reasonTextarea.value = product.reason;
 }
 
 export const mapFeeForm = (feeId) => {
