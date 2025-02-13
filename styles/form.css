@@ -16,13 +16,6 @@
     display: grid;
 }
 
-.sub-form-container {
-    border: 1px solid var(--secondary);
-    border-radius: var(--border-radius);
-    margin: 20px 0;
-    padding: 1.5rem;
-}
-
 .sub-form-title {
     margin-bottom: 20px;
 }
