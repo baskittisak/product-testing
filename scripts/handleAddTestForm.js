@@ -1,13 +1,13 @@
 import { RESPONSIBLE_AGENCY } from "./data.js";
 
-const addTestForm = (testData, indexTestData) => {
+const addTestForm = (testData) => {
   const newSubForm = document.createElement("div");
   newSubForm.classList.add("sub-form-container");
 
   const title = document.createElement("h4");
   title.classList.add("sub-form-title");
   if (!testData) {
-    title.textContent = `รายการทดสอบ`;
+    title.textContent = `เพิ่มรายการทดสอบ`;
   }
 
   const formColumn1 = createFormColumn("รหัสรายการ", "text", "กรอกรหัสรายการ");
@@ -88,6 +88,10 @@ const addTestForm = (testData, indexTestData) => {
   // formButton.appendChild(deleteButton);
 
   if (testData) {
+    if (typeof testData === "string") {
+      testData = JSON.parse(testData);
+    }
+
     const {
       testCode,
       testName,
@@ -102,7 +106,7 @@ const addTestForm = (testData, indexTestData) => {
       reason,
     } = testData;
 
-    title.textContent = `รายการทดสอบ ${indexTestData + 1}`;
+    title.textContent = `แก้ไขรายการทดสอบ ${testCode}`;
 
     formColumn1.querySelector("input").value = testCode;
     formColumn2.querySelector(

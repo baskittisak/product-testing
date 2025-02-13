@@ -60,11 +60,10 @@
     </div>
     <button
       class="button primary-button"
-      onclick="openModalCreate(); addTestForm();"
+      onclick="openModalProduct(); addTestForm();"
     >
       <i class="bx bx-plus-circle"></i><span>เพิ่มรายการทดสอบ</span>
     </button>
-
     <div class="form-button">
       <button class="button secondary-button">ล้างข้อมูล</button>
       <button class="button primary-button">
@@ -74,11 +73,11 @@
   </div>
 </div>
 
-<div id="modal-create" class="modal">
+<div id="modalFormProduct" class="modal">
   <div class="modal-content">
-    <i class="bx bx-x close-icon" onclick="closeModalCreate()"></i>
+    <i class="bx bx-x close-icon" onclick="closeModalProduct()"></i>
     <div id="testFormContainer"></div>
-    <button class="button primary-button" onclick="onCreateForm()">
+    <button class="button primary-button" onclick="onSubmitFormProduct()">
       <i class="bx bxs-save"></i><span>บันทึกข้อมูล</span>
     </button>
   </div>

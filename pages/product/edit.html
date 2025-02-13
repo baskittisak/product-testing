@@ -1,66 +1,124 @@
 <div class="box-container">
-    <div class="box-header">
-        <span>
-            <h4>แก้ไขผลิตภัณฑ์: <span class="code-product"></span></h4>
-            <p>กรุณาระบุข้อมูลด้านล่างให้ครบถ้วน</p>
-        </span>
+  <div class="box-header">
+    <span>
+      <h4>แก้ไขผลิตภัณฑ์: <span class="code-product"></span></h4>
+      <p>กรุณาระบุข้อมูลด้านล่างให้ครบถ้วน</p>
+    </span>
+  </div>
+  <div class="form-header">
+    <h4>ข้อมูลผลิตภัณฑ์: <span class="code-product"></span></h4>
+  </div>
+  <div class="form-container">
+    <div class="form-column">
+      <p>กลุ่มผลิตภัณฑ์</p>
+      <div class="search-input">
+        <select id="productGroupSelect">
+          <option value="" disabled selected>เลือกกลุ่มผลิตภัณฑ์</option>
+        </select>
+      </div>
     </div>
-    <div class="form-header">
-        <h4>ข้อมูลผลิตภัณฑ์: <span class="code-product"></span></h4>
+    <div class="form-column">
+      <p>รหัสผลิตภัณฑ์</p>
+      <div class="search-input">
+        <input type="text" placeholder="กรอกรหัสผลิตภัณฑ์" />
+      </div>
     </div>
-    <div class="form-container">
-        <div class="form-column">
-            <p>กลุ่มผลิตภัณฑ์</p>
-            <div class="search-input">
-                <select id="productGroupSelect">
-                    <option value="" disabled selected>เลือกกลุ่มผลิตภัณฑ์</option>
-                </select>
-            </div>
-        </div>
-        <div class="form-column">
-            <p>รหัสผลิตภัณฑ์</p>
-            <div class="search-input">
-                <input type="text" placeholder="กรอกรหัสผลิตภัณฑ์" />
-            </div>
-        </div>
-        <div class="form-column">
-            <p>ชื่อผลิตภัณฑ์</p>
-            <div class="search-input">
-                <input type="text" placeholder="กรอกชื่อผลิตภัณฑ์" />
-            </div>
-            <p>ชื่อผลิตภัณฑ์ (ภาษาอังกฤษ)</p>
-            <div class="search-input">
-                <input type="text" placeholder="กรอกชื่อผลิตภัณฑ์ (ภาษาอังกฤษ)" />
-            </div>
-        </div>
-        <div class="form-column">
-            <p>สถานะการให้บริการ</p>
-            <div class="search-input">
-                <label class="radio">
-                    <input type="radio" name="status-product-group" value="available" />
-                    <span></span>
-                    ให้บริการ
-                </label>
-                <label class="radio">
-                    <input type="radio" name="status-product-group" value="not-available" />
-                    <span></span>
-                    งดให้บริการ
-                </label>
-            </div>
-        </div>
-        <div class="form-column">
-            <p>สาเหตุการงดให้บริการ</p>
-            <div class="search-input">
-                <textarea placeholder="กรอกสาเหตุการงดให้บริการ"></textarea>
-            </div>
-        </div>
-        <button class="button primary-button" onclick="addTestForm()">
-            <i class='bx bx-plus-circle' ></i><span>เพิ่มรายการทดสอบ</span>
-        </button>
-        <div id="testFormContainer"></div>
-        <div class="form-button">
-            <button class="button secondary-button">ล้างข้อมูล</button>
-            <button class="button primary-button"><i class='bx bxs-save' ></i><span>บันทึกข้อมูล</span></button>
-        </div>
+    <div class="form-column">
+      <p>ชื่อผลิตภัณฑ์</p>
+      <div class="search-input">
+        <input type="text" placeholder="กรอกชื่อผลิตภัณฑ์" />
+      </div>
+      <p>ชื่อผลิตภัณฑ์ (ภาษาอังกฤษ)</p>
+      <div class="search-input">
+        <input type="text" placeholder="กรอกชื่อผลิตภัณฑ์ (ภาษาอังกฤษ)" />
+      </div>
     </div>
+    <div class="form-column">
+      <p>สถานะการให้บริการ</p>
+      <div class="search-input">
+        <label class="radio">
+          <input type="radio" name="status-product-group" value="available" />
+          <span></span>
+          ให้บริการ
+        </label>
+        <label class="radio">
+          <input
+            type="radio"
+            name="status-product-group"
+            value="not-available"
+          />
+          <span></span>
+          งดให้บริการ
+        </label>
+      </div>
+    </div>
+    <div class="form-column">
+      <p>สาเหตุการงดให้บริการ</p>
+      <div class="search-input">
+        <textarea placeholder="กรอกสาเหตุการงดให้บริการ"></textarea>
+      </div>
+    </div>
+    <button
+      class="button primary-button"
+      onclick="openModalProduct(); addTestForm();"
+    >
+      <i class="bx bx-plus-circle"></i><span>เพิ่มรายการทดสอบ</span>
+    </button>
+
+    <div class="table-container table-form">
+      <table>
+        <thead>
+          <tr>
+            <th>รหัสรายการ</th>
+            <th>ชื่อรายการทดสอบ</th>
+            <th>หน่วยงานที่รับผิดชอบ</th>
+            <th>ราคา</th>
+            <th>ระยะเวลาดำเนินการ</th>
+            <th>สถานะการให้บริการ</th>
+            <th>จัดการ</th>
+          </tr>
+        </thead>
+        <tbody id="productListTable"></tbody>
+      </table>
+      <div class="table-pagination">
+        <div>แสดงผลลัพธ์ 10 จาก 10 รายการ</div>
+        <ul>
+          <li>
+            <p>
+              <i class="bx bx-chevron-left"></i>
+              <span>ก่อนหน้า</span>
+            </p>
+          </li>
+          <li><p class="active">1</p></li>
+          <li><p>2</p></li>
+          <li><p>3</p></li>
+          <li><p>4</p></li>
+          <li><p>5</p></li>
+          <li>
+            <p>
+              <span>ถัดไป</span>
+              <i class="bx bx-chevron-right"></i>
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="form-button">
+      <button class="button secondary-button">ล้างข้อมูล</button>
+      <button class="button primary-button">
+        <i class="bx bxs-save"></i><span>บันทึกข้อมูล</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div id="modalFormProduct" class="modal">
+  <div class="modal-content">
+    <i class="bx bx-x close-icon" onclick="closeModalProduct()"></i>
+    <div id="testFormContainer"></div>
+    <button class="button primary-button" onclick="onSubmitFormProduct()">
+      <i class="bx bxs-save"></i><span>บันทึกข้อมูล</span>
+    </button>
+  </div>
 </div>

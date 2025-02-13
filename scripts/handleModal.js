@@ -1,16 +1,16 @@
-const openModalCreate = () => {
-  document.getElementById("modal-create").style.display = "flex";
+const openModalProduct = () => {
+  document.getElementById("modalFormProduct").style.display = "flex";
 };
 
-const closeModalCreate = () => {
-  document.getElementById("modal-create").style.display = "none";
+const closeModalProduct = () => {
+  document.getElementById("modalFormProduct").style.display = "none";
   document.getElementById("testFormContainer").innerHTML = "";
 };
 
-const onCreateForm = () => {
-  closeModalCreate();
+const onSubmitFormProduct = () => {
+  closeModalProduct();
 };
 
-window.openModalCreate = openModalCreate;
-window.closeModalCreate = closeModalCreate;
-window.onCreateForm = onCreateForm;
+window.openModalProduct = openModalProduct;
+window.closeModalProduct = closeModalProduct;
+window.onSubmitFormProduct = onSubmitFormProduct;
