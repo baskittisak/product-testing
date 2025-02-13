@@ -87,7 +87,11 @@ const mapProductLstTable = (product) => {
             )}'))">
             <i class='bx bx-edit'></i>
           </button>
-          <button class="button primary-button"><i class='bx bx-trash'></i></button>
+          <button class="button primary-button" onclick="openModalConfirmDelete(() => deleteProduct('${encodeURIComponent(
+            product.testCode
+          )}'))">
+            <i class='bx bx-trash'></i>
+          </button>
         </div>
       </td>
     `;
@@ -284,3 +288,9 @@ export const mapFeeForm = (feeId) => {
   const fileName = feeData.document;
   fileNameSpan.textContent = fileName;
 };
+
+const deleteProduct = (productCode) => {
+  alert(`รหัสรายการ: ${productCode} จะถูกลบ ก็ต่อเมื่อเชื่อมต่อหลังบ้านแล้ว`);
+};
+
+window.deleteProduct = deleteProduct;

@@ -122,3 +122,21 @@
     </button>
   </div>
 </div>
+
+<div id="modalConfirmDelete" class="modal">
+  <div class="modal-confirm">
+    <h3>ยืนยันการลบ</h3>
+    <p>คุณแน่ใจหรือไม่ว่าต้องการลบข้อมูลนี้?</p>
+    <div class="modal-actions">
+      <button class="button primary-button" onclick="confirmDelete()">
+        <i class="bx bx-check"></i> ยืนยัน
+      </button>
+      <button
+        class="button secondary-button"
+        onclick="closeModalConfirmDelete()"
+      >
+        <i class="bx bx-x"></i> ยกเลิก
+      </button>
+    </div>
+  </div>
+</div>
